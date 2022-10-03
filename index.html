@@ -304,6 +304,24 @@
 
 <section class="section">
   <div class="container is-max-desktop">
+    <!-- Problem Description. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full_width">
+        <hr>
+        <h2 class="title is-3">Method</h2>
+        <br>
+        <img src="static\images\main.png" class="center"/>
+        <div class="content has-text-justified">
+          <br>  
+          <p>
+            Implementation of our Double-M Quantification method on collaborative object detection. <strong>(a) Early collaboration</strong> shares raw point cloud with other agents, and <strong>(b) intermediate collaboration</strong> shares intermediate feature representations with other agents. <strong>(c) Double-M Quantification method</strong> estimates the multi-variate Gaussian distribution of each corner.
+    Our Double-M Quantification method can be used on different collaborative object detection. During the training stage, Double-M Quantification tailors a moving block bootstrapping algorithm to get the final model parameter, the average aleatoric uncertainty of the validation dataset and the covariance of all residual vectors for epistemic uncertainty. During the inference stage, we can combine the aforementioned two covariance matrix and the predicted covariance matrix from the object detector to compute the final covariance matrix.
+          </p>
+        </div>
+      </div>
+    </div>
+    <hr>
+    
     <!-- Method. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-full_width">
