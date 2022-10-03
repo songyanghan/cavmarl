@@ -269,7 +269,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Sharing information between connected and autonomous vehicles (CAVs) fundamentally improves the performance of collaborative object detection for self-driving. However, CAVs still have uncertainties on object detection due to practical challenges, which will affect the later modules in self-driving such as planning and control. Hence, uncertainty quantification is crucial for safety-critical systems such as CAVs. Our work is the first to estimate the uncertainty of collaborative object detection. We propose a novel uncertainty quantification method, called Double-M Quantification, which tailors a moving block bootstrap (MBB) algorithm with direct modeling of the multivariant Gaussian distribution of each corner of the bounding box. Our method captures both the epistemic uncertainty and aleatoric uncertainty with one inference based on the offline Double-M training process. And it can be used with different collaborative object detectors. Through experiments on the comprehensive CAVs collaborative perception dataset, we show that our Double-M method achieves up to 4.09 times improvement on uncertainty score and up to 3.13% accuracy improvement, compared with the state-of-the-art uncertainty quantification. The results also validate that sharing information between CAVs is beneficial for the system in both improving accuracy and reducing uncertainty.
+            The recent advancements in wireless technology enable connected autonomous vehicles (CAVs) to gather information about their environment by vehicle-to-vehicle (V2V) communication. In this work, we design an information-sharing-based multi-agent reinforcement learning (MARL) framework for CAVs, to take advantage of the extra information when making decisions to improve traffic efficiency and safety. The safe actor-critic algorithm we propose has two new techniques: the truncated Q-function and safe action mapping. The truncated Q-function utilizes the shared information from neighboring CAVs such that the joint state and action spaces of the Q-function do not grow in our algorithm for a large-scale CAV system. We prove the bound of the approximation error between the truncated-Q and global Q-functions. The safe action mapping provides a provable safety guarantee for both the training and execution based on control barrier functions. Using the CARLA simulator for experiments, we show that our approach can improve the CAV system's efficiency in terms of average velocity and comfort under different CAV ratios and different traffic densities. We also show that our approach avoids the execution of unsafe actions and always maintains a safe distance from other vehicles. We construct an obstacle-at-corner scenario to show that the shared vision can help CAVs to observe obstacles earlier and take action to avoid traffic jams.
           </p>
         </div>
       </div>
@@ -287,17 +287,13 @@
         <h2 class="title is-3">Contribution</h2>
         <div class="content has-text-justified">
           <li>
-            To the best of our knowledge, our proposed Double-M Quantification is the <strong>first attempt to estimate the uncertainty of collaborative object detection.</strong>
-            Our method tailors a moving block bootstrap algorithm to estimate both the <strong>epistemic and aleatoric uncertainty in one inference.</strong> 
+            We propose a novel safe and efficient actor-critic algorithm for behavior planning of CAVs based on two new techniques: 1) <strong>Truncated Q-function</strong>: Each vehicle learns a truncated Q-function as a critic that only needs the states and actions from neighboring vehicles. The joint state and action spaces of the truncated Q-function do not grow in a large-scale CAV system. 2) <strong>Safe action mapping</strong>: We map any action in the action space to the safe action set so that the training and execution have provable safety guarantees.
           </li>
           <li>
-            We design a novel loss function and the <strong>representation format of the bounding box</strong> uncertainty in the direct modeling component to estimate the aleatoric uncertainty. 
+            To support the learning process of the truncated Q-function, we propose a weight-pruned convolutional neural network (CNN) technique to guarantee the images from the camera and point clouds from LIDAR can be processed fast enough such that the vision information is always available for the learning of the truncated Q-function.
           </li>
           <li>
-            We validate the advantages of the proposed methodology based on V2X-SIM [1] and show that our Double-M Quantification method <strong>reduces the uncertainty and improves the accuracy.</strong> 
-          </li>
-          <li>
-            We also show that sharing information between CAVs is beneficial for the system in both improving accuracy and reducing uncertainty. 
+            We validate our algorithms in the CARLA simulator that can simulate complicated mixed traffic environments including both autonomous and human-driven vehicles. The experiments show that the safe actor-critic algorithm can improve traffic efficiency with safety guarantees. We also validate our MARL algorithm in challenging driving scenarios like obstacle-at-corner, and the shared vision with our algorithm helps vehicles to avoid traffic jams.
           </li>
         </div>
       </div>
