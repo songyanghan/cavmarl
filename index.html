@@ -229,7 +229,7 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
 
-      <img src="static\images\system_modeling.pdf" class="center"/>
+      <img src="static\images\learning_control_design.png" class="center"/>
       <!-- <video id="teaser" autoplay muted loop height="100%">
         <source src="./static/images/SUBT_video.mp4"
                 type="video/mp4">
@@ -242,7 +242,7 @@
     <!-- <h2 class="subtitle has-text-centered">
       (The <span style="color:#000000;">black</span> / <span style="color:#ff0000;">red</span> lines are the ground truth / predicted camera trajectory)
     </h2> -->
-    <h2 class="is-size-6 has-text-centered">We design a novel <strong>safe behavior planning and control</strong> framework with <strong>decentralized training and decentralized execution</strong> to tackle the new challenges for CAVs. One typical workflow for an autonomous vehicle includes perception, prediction, mapping and localization, routing, behavior planning, and control. We focus on the last two modules: the <strong>behavior planning</strong> module to determine whether to change or keep lanes; the <strong>control</strong> module to control the steering angle and the acceleration.</h2>
+    <h2 class="is-size-6 has-text-centered">We design a <strong>safe actor-critic multi-agent reinforcement learning (MARL)</strong> algorithm to learn a policy to select actions. We use two new techniques in our algorithm: truncated Q-function and safe action mapping. We also introduce a CBF-QP controller to generate control inputs for steering angle and acceleration with provable safety guarantees.</h2>
     
     </div>
   </div>
@@ -310,12 +310,11 @@
         <hr>
         <h2 class="title is-3">Method</h2>
         <br>
-        <img src="static\images\main.png" class="center"/>
+        <img src="static\images\system_modeling.pdf" class="center"/>
         <div class="content has-text-justified">
           <br>  
           <p>
-            Implementation of our Double-M Quantification method on collaborative object detection. <strong>(a) Early collaboration</strong> shares raw point cloud with other agents, and <strong>(b) intermediate collaboration</strong> shares intermediate feature representations with other agents. <strong>(c) Double-M Quantification method</strong> estimates the multi-variate Gaussian distribution of each corner.
-    Our Double-M Quantification method can be used on different collaborative object detection. During the training stage, Double-M Quantification tailors a moving block bootstrapping algorithm to get the final model parameter, the average aleatoric uncertainty of the validation dataset and the covariance of all residual vectors for epistemic uncertainty. During the inference stage, we can combine the aforementioned two covariance matrix and the predicted covariance matrix from the object detector to compute the final covariance matrix.
+            We design a novel <strong>safe behavior planning and control</strong> framework with <strong>decentralized training and decentralized execution</strong> to tackle the new challenges for CAVs. One typical workflow for an autonomous vehicle includes perception, prediction, mapping and localization, routing, behavior planning, and control. We focus on the last two modules: the <strong>behavior planning</strong> module to determine whether to change or keep lanes; the <strong>control</strong> module to control the steering angle and the acceleration.
           </p>
         </div>
       </div>
