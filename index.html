@@ -320,18 +320,17 @@
       </div>
     </div>
     
-    <!-- Method. -->
+    <!-- Truncated-Q. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-full_width">
         <hr>
-        <h2 class="title is-3">Method</h2>
+        <h2 class="title is-3">Truncated Q-function</h2>
         <br>
-        <img src="static\images\main.png" class="center"/>
+        <img src="static\images\Qnet.pdf" class="center"/>
         <div class="content has-text-justified">
           <br>  
           <p>
-            Implementation of our Double-M Quantification method on collaborative object detection. <strong>(a) Early collaboration</strong> shares raw point cloud with other agents, and <strong>(b) intermediate collaboration</strong> shares intermediate feature representations with other agents. <strong>(c) Double-M Quantification method</strong> estimates the multi-variate Gaussian distribution of each corner.
-    Our Double-M Quantification method can be used on different collaborative object detection. During the training stage, Double-M Quantification tailors a moving block bootstrapping algorithm to get the final model parameter, the average aleatoric uncertainty of the validation dataset and the covariance of all residual vectors for epistemic uncertainty. During the inference stage, we can combine the aforementioned two covariance matrix and the predicted covariance matrix from the object detector to compute the final covariance matrix.
+            The truncated Q-network for the behavior planning with the LSTM (long short-term memory) layer and FC (fully connected) layers. We use truncated Q-function to approximate the centralized critic such that the training process utilizes the information sharing capability of CAVs instead of relying on the global states and actions.
           </p>
         </div>
       </div>
@@ -339,10 +338,10 @@
     <hr>
 
     
-    <!-- Applications.-->
+    <!-- Safe action mapping.-->
     <div class="columns is-centered has-text-centered">
       <div class="column is-full_width">
-        <h2 class="title is-3">Qualitative&nbsp;&nbsp;Results</h2>
+        <h2 class="title is-3">Safe&nbsp;&nbsp;Action&nbsp;&nbsp;Mapping</h2>
       </div>
     </div>
     <p>
@@ -350,12 +349,11 @@
     </p>
     <!-- <h3 class="title is-4">Attention of Detection Head</h3> -->
     <div class="column is-full_width">
-      <img src="static\images\exp.png" class="center"/>
+      <img src="static\images\safe_action_mapping.png" class="center"/>
       <div class="content has-text-justified">
         <br>  
         <p>
-          Visualization of our Double-M Quantification  results on different scenes of V2X-Sim [1]. The results of LB, DN, and UB are respectively shown in the first, second, and third row. <span style="color:#ff0000;">Red</span> boxes are predictions, and <span style="color:#00CC66;">green</span>
-boxes are ground truth. <span style="color:#FF8000;">Orange</span> ellipse denotes the covariance of each corner. We can see our Double-M Quantification predicts large <span style="color:#FF8000;">orange</span> ellipses when the differece between the <span style="color:#ff0000;">red</span> bounding box and the corresponding <span style="color:#00CC66;">green</span> bounding box is huge, which means our method is efficient. 
+          We use safe action mapping to guarantee the action explored in training and implemented in execution is safe with feasible control inputs. We use a control barrier function based quadratic programming (CBF-QP) to evaluate whether an action is safe or not. If the action is safe, then return it; if not, we will search other actions in descending order according to their action value and find a safe one. If all the actions are not safe in the worst case, then we will apply the emergency stop (ES) process.
 
         </p>
         </p>
